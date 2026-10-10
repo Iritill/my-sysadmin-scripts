@@ -24,6 +24,7 @@ Run continuous monitoring (one report every 5 seconds):
 
 Stop continuous monitoring with Ctrl+C.
 
+The script validates the monitoring interval and reports log-writing errors.
 ## Configuration
 
 The default log file is `monitor.log`.
