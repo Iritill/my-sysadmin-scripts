@@ -1,37 +1,52 @@
-# System Resource Monitor
+# Мониторинг системных ресурсов
 
-A Bash script for monitoring Linux system resources.
+Простой Bash-скрипт для мониторинга ресурсов Linux.
 
-## Requirements
+## Что делает скрипт
 
-- Linux
-- Bash
-- `free`, `df`, `uptime`, and `date`
+- Показывает использование оперативной памяти.
+- Показывает использование дискового пространства.
+- Выводит время работы системы и текущую нагрузку.
+- Сохраняет отчёты в файл `monitor.log`.
 
-## Usage
+## Запуск
 
-Make the script executable:
+Сделать скрипт исполняемым:
 
-    chmod +x script.sh
+```bash
+chmod +x script.sh
+```
 
-Write one report:
+Собрать один отчёт:
 
-    ./script.sh --once
+```bash
+./script.sh --once
+```
 
-Run continuous monitoring (one report every 5 seconds):
+Запустить постоянный мониторинг (отчёт каждые 5 секунд):
 
-    ./script.sh
+```bash
+./script.sh
+```
 
-Stop continuous monitoring with Ctrl+C.
+Остановить выполнение: `Ctrl+C`.
 
-The script validates the monitoring interval and reports log-writing errors.
-## Configuration
+## Настройка
 
-The default log file is `monitor.log`.
-The default interval is 5 seconds.
+Изменить интервал мониторинга:
 
-You can override them with environment variables:
+```bash
+INTERVAL=10 ./script.sh
+```
 
-    LOG_FILE=custom.log INTERVAL=10 ./script.sh
+Изменить файл для сохранения отчётов:
 
-Each report includes a timestamp, memory usage, disk usage, and system uptime.
+```bash
+LOG_FILE=report.log ./script.sh --once
+```
+
+## Файлы
+
+- `script.sh` — скрипт мониторинга.
+- `sample_output.txt` — пример отчёта.
+- `.gitignore` — исключения для Git.
