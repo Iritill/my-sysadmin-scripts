@@ -1,3 +1,4 @@
+
 services:
   my-script:
     build: .
@@ -5,3 +6,10 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:8080:8080"
+    volumes:
+      - app_data:/var/www
+      - /var/log:/var/log:ro
+
+volumes:
+  app_data:
+
